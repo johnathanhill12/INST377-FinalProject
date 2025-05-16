@@ -3,6 +3,8 @@
         <Title> Classify Home Page </Title>
         <link rel="stylesheet" href="Website-layout.css" />
         <script src="Classify.js" defer ></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>
     </head>
     <!-- Website Navigation -->
     <body class="home-css">
@@ -34,5 +36,37 @@
             </form>
 
         </div>
+
+        <script>
+             if (annyang) {
+        // Defining the  voice commands
+        const commands = {
+            'hello': function() { 
+                alert('Hello world!'); 
+            },
+            'Navigate to home ': function () {
+                window.location.href = 'HomePage.html';
+            },
+            'Navigate to about page': function () {
+                window.location.href = 'AboutPage.html';
+            }
+        };
+
+        // Adds commands to annyang
+        annyang.addCommands(commands);
+
+        // Starts annyang
+        annyang.start();
+
+        // Connects annyang to SpeechKITT
+        SpeechKITT.annyang();
+
+        // Sets the UI theme for SpeechKITT
+        SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css');
+
+        // Displays the SpeechKITT UI
+        SpeechKITT.vroom();
+    }
+        </script>
     </body>
 </html>
