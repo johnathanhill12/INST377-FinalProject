@@ -107,6 +107,37 @@ nav {
     font-size: 0.9rem;
     color: #666;
   }
-  
+
+ .popup-Container{
+    position: fixed;
+    display: none;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1000;
+
+ }
+
+ .popup-Content {
+    background-color: black;
+    
+    border: 2px solid #fff;
+    padding: 13px 16px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 2);
+    min-width: 400px;
+    max-width: 450px;
+    font-size: 20px;
+    position: relative;
+
+ }
+
+ .close {
+    top: 5px;
+    right: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+ }
 
 

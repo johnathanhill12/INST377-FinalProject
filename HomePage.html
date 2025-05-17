@@ -36,7 +36,24 @@
              <button id="submitBtn">Submit</button>
              <div id="playlistsContainer"></div>
 
-             <!-- <script src="Classify.js"></script> -->
+            <br>
+            <br>
+            <br>
+
+            <button id="openPopup">Open Speech Instructions</button>
+
+            <div id="popup" class="popup-Container">
+                <div class="popup-Content">
+                    <span id="closePopup" class="close">&times;</span>
+                    <p>These are your options:
+                        <br>
+                        Say "Navigate to home" to go to the Home Page or 
+                        <br>
+                        "Navigate to about" to go the About Page.
+
+                    </p>
+                </div>
+            </div>
 
         </div>
 
@@ -70,6 +87,21 @@
         // Displays the SpeechKITT UI
         SpeechKITT.vroom();
     }
+    const popup = document.getElementById("popup");
+    const openButton = document.getElementById("openPopup");
+    const closeButton = document.getElementById("closePopup");
+
+    openButton.addEventListener("click", () => {
+        popup.style.display = "block";
+
+    });
+
+    closeButton.addEventListener("click", () => {
+        popup.style.display = "none";
+
+    });
+
+
         </script>
     </body>
 </html>
