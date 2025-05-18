@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <Title> Classify Home Page </Title>
+        <link rel="stylesheet" href="Website-layout.css" />
+        <script src="Classify.js" defer ></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>
+        <script src="path-to-the-file/splide.min.js"></script>
+        <link rel="stylesheet" href="path-to-the-file/splide.min.css">
+
+
+    </head>
+    <!-- Website Navigation -->
+    <body class="home-css">
+        <nav id="page-nav">
+            <div class="brand">Classify</div>
+            <ul class="Nav-links">
+                <li><a href="HomePage.html"> HOME </a></li>
+                <li><a href="AboutPage.html" target="_blank"> ABOUT </a></li>
+            </ul>
+        </nav>
+        <!-- Marks the home page content section -->
+        <div class="home-Content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <h1>Whats the mood for today?</h1>
+            <h3>The first step to refining your musical taste starts here.</h3>
+            
+            <!-- URL Input Box -->
+            <h1>Spotify Playlist Viewer</h1>
+             <input type="text" id="userIdInput" placeholder="Enter Spotify User ID">
+             <button id="submitBtn">Submit</button>
+             <div id="playlistsContainer"></div>
+
+            <br>
+            <br>
+            <br>
+
+            <button id="openPopup">Open Speech Instructions</button>
+
+            <div id="popup" class="popup-Container">
+                <div class="popup-Content">
+                    <span id="closePopup" class="close">&times;</span>
+                    <p>These are your options:
+                        <br>
+                        Say "Navigate to home" to go to the Home Page or 
+                        <br>
+                        "Navigate to about" to go the About Page.
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+             if (annyang) {
+        // Defining the  voice commands
+        const commands = {
+            'hello': function() { 
+                alert('Hello world!'); 
+            },
+            'Navigate to home ': function () {
+                window.location.href = 'HomePage.html';
+            },
+            'Navigate to about page': function () {
+                window.location.href = 'AboutPage.html';
+            }
+        };
+
+        // Adds commands to annyang
+        annyang.addCommands(commands);
+
+        // Starts annyang
+        annyang.start();
+
+        // Connects annyang to SpeechKITT
+        SpeechKITT.annyang();
+
+        // Sets the UI theme for SpeechKITT
+        SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css');
+
+        // Displays the SpeechKITT UI
+        SpeechKITT.vroom();
+    }
+    const popup = document.getElementById("popup");
+    const openButton = document.getElementById("openPopup");
+    const closeButton = document.getElementById("closePopup");
+
+    openButton.addEventListener("click", () => {
+        popup.style.display = "block";
+
+    });
+
+    closeButton.addEventListener("click", () => {
+        popup.style.display = "none";
+
+    });
+
+
+        </script>
+    </body>
+</html>
