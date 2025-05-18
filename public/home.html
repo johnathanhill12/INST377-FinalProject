@@ -60,8 +60,7 @@
         </div>
 
         <script>
-             if (annyang) {
-        // Defining the  voice commands
+               // Defining the  voice commands
         const commands = {
             'hello': function() { 
                 alert('Hello world!'); 
@@ -73,7 +72,8 @@
                 window.location.href = 'AboutPage.html';
             }
         };
-
+        
+        if (annyang) {
         // Adds commands to annyang
         annyang.addCommands(commands);
 
