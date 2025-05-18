@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const supabaseClient = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
@@ -68,6 +69,10 @@ app.post('/customer', async(req,res) => {
   }
 
     res.send(data);
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
