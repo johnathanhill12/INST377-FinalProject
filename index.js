@@ -88,14 +88,14 @@ dotenv.config();
 const app = express();
 const port = 3000;
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/publicTrial'));
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/', (req, res) => {
-  res.sendFile('INST377-FinalProject/publicTrial/home.html', { root: __dirname });
+  res.sendFile('publicTrial/home.html', { root: __dirname });
 });
 
 app.get('/customers', async (req, res) => {
