@@ -78,7 +78,7 @@
         annyang.addCommands(commands);
 
         // Starts annyang
-        //annyang.start();
+        annyang.start();
 
         // Connects annyang to SpeechKITT
         SpeechKITT.annyang();
@@ -88,8 +88,11 @@
 
         // Displays the SpeechKITT UI
         SpeechKITT.vroom();
+        } else {
+            console.log('Annyang is not working');
+        }
         
-    }
+    
     </script>
     <script>
     const popup = document.getElementById("popup");
