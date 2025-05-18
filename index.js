@@ -2,6 +2,8 @@ const express = require('express');
 const supabaseClient = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
 const { isValidStateAbbreviation } = require('usa-state-validator');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express()
 const port = 3000;
@@ -10,8 +12,8 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-const supabaseUrl = 'https://yadtiioojpewtugelshw.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlhZHRpaW9vanBld3R1Z2Vsc2h3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1MzAyOTAsImV4cCI6MjA2MzEwNjI5MH0.-JYhp5IK7WxLtq867z2pKE8SYL2AI6IDUhP8TdYFCHk';
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/customers', async (req, res) => {
