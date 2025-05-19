@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Classify Customer Info page</title>
+        <link rel="stylesheet" href="Website-layout.css" />
+        <script src="customer-classify.js" defer ></script>
+
+    </head>
+    <body>
+        <nav id="page-nav">
+            <div class="brand">Classify</div>
+            <ul class="Nav-links">
+                <li><a href="home.html"> HOME </a></li>
+                <li><a href="AboutPage.html" target="_blank"> ABOUT </a></li>
+                <li><a href="CustomerPage.html" target="_blank"> Customer Info </a></li>
+            </ul>
+        </nav>
+
+        <br>
+        <br>
+
+        <form onsubmit="createCustomer(); return false">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName">
+            <br>
+            <label for="Age">Age:</label>
+            <input type="number" id="Age">
+            <br>
+            <label for="favGenre">Favorite Genre:</label>
+            <input type="text" id="favGenre">
+            <br>
+            <br>
+            <input type="submit" name="Add Customer">
+
+    </body>
+</html>

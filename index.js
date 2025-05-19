@@ -36,26 +36,26 @@ app.post('/customer', async (req, res) => {
 
   console.log(req.body);
   var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
-  var state = req.body.state;
+  var Age = req.body.Age;
+  var favGenre = req.body.favGenre;
 
-  if (!isValidStateAbbreviation(state)) {
-    console.log(`State ${state} is Invalid`);
-    res.statusCode = 400;
-    res.header('Content-Type', 'application/json');
-    var errorJson = {
-      message: `${state} is not a Valid State`,
-    };
-    res.send(JSON.stringify(errorJson));
-    return;
-  }
+  // if (!isValidStateAbbreviation(Age)) {
+  //   console.log(`State ${state} is Invalid`);
+  //   res.statusCode = 400;
+  //   res.header('Content-Type', 'application/json');
+  //   var errorJson = {
+  //     message: `${state} is not a Valid State`,
+  //   };
+  //   res.send(JSON.stringify(errorJson));
+  //   return;
+  // }
 
   const { data, error } = await supabase
     .from('customer')
     .insert({
       customer_first_name: firstName,
-      customer_last_name: lastName,
-      customer_state: state,
+      customer_Age: Age,
+      customer_favGenre: favGenre
     })
     .select();
 

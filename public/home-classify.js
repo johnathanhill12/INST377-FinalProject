@@ -1,4 +1,4 @@
-
+//JS code for the home page 
 const accessToken = 'BQAmZltsUSdoq9Ku7xSBPvTw5-CLwQPBWvLnLeJSLYC7aov_0G7MNav87Z-fYJsfOOXW7X0pqOtCL8etaa0G1I4OEO_54xsrRJV_MWIaBPEaN4yXSUqqwFTzJLwWYjFN3-hLp3Q1cTY';
 
 document.getElementById('submitBtn').addEventListener('click', () => {
