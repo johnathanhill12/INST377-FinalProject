@@ -4,6 +4,8 @@
         <title>Classify Customer Info page</title>
         <link rel="stylesheet" href="Website-layout.css" />
         <script src="customer-classify.js" defer ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>
 
     </head>
     <body>
@@ -31,6 +33,46 @@
             <br>
             <br>
             <input type="submit" name="Add Customer">
+        
+            <script>
+                     // Defining the  voice commands
+        const commands = {
+            'hello': function() { 
+                alert('Hello world!'); 
+            },
+            'Navigate to home page': function () {
+                window.location.href = 'home.html';
+            },
+            'Navigate to about page': function () {
+                window.location.href = 'AboutPage.html';
+            },
+
+            'Navigate to customer page': function (){
+                window.location.href = 'CustomerPage.html';
+            }
+            
+        };
+        
+        if (annyang) {
+        // Adds commands to annyang
+        annyang.addCommands(commands);
+
+        // Starts annyang
+        annyang.start();
+
+        // Connects annyang to SpeechKITT
+        SpeechKITT.annyang();
+
+        // Sets the UI theme for SpeechKITT
+        SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css');
+
+        // Displays the SpeechKITT UI
+        SpeechKITT.vroom();
+        } else {
+            console.log('Annyang is not working');
+        }
+     
+        </script>
 
     </body>
 </html>

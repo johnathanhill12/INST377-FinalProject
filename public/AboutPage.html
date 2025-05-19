@@ -78,20 +78,25 @@
                 </div>
               </section>
         <script>
-           if (annyang) {
-        // Defining the  voice commands
+                 // Defining the  voice commands
         const commands = {
             'hello': function() { 
                 alert('Hello world!'); 
             },
-            'Navigate to home ': function () {
-                window.location.href = 'HomePage.html';
+            'Navigate to home page': function () {
+                window.location.href = 'home.html';
             },
             'Navigate to about page': function () {
                 window.location.href = 'AboutPage.html';
-            }
-        };
+            },
 
+            'Navigate to customer page': function (){
+                window.location.href = 'CustomerPage.html';
+            }
+            
+        };
+        
+        if (annyang) {
         // Adds commands to annyang
         annyang.addCommands(commands);
 
@@ -106,12 +111,15 @@
 
         // Displays the SpeechKITT UI
         SpeechKITT.vroom();
+        } else {
+            console.log('Annyang is not working');
+        }
 
         document.addEventListener( 'DOMContentLoaded', function() {
         var splide = new Splide( '.splide' );
         splide.mount();
         } );
-    }
+
         </script>
         
     </body>
